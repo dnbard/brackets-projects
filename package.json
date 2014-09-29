@@ -1,0 +1,13 @@
+{
+    "name": "dnbard.projects",
+    "title": "Projects",
+    "description": "Window that helps to switch between Projects, add favorites. Really helpful if you have a lot of Projects.",
+    "homepage": "https://github.com/dnbard/brackets-projects",
+    "version": "0.1.0",
+    "author": "Alex Bardanov",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.32.0"
+    },
+    "keywords": ["documents", "projects", "modal"]
+}

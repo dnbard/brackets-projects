@@ -1,0 +1,116 @@
+#project-files-header{
+    position: relative;
+    padding: 8px 0 9px 30px;
+}
+
+#ext-projects-toggle{
+    display: inline-block;
+    background: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.projects_modal{
+    width: 90%;
+    max-width: 650px !important;
+    height: auto;
+}
+
+.projects_modal .modal-body{
+    max-height: none;
+}
+
+.projects_modal .muted{
+    transition: 0.25s all;
+}
+
+.projects_modal .project{
+    width: 100%;
+    cursor: pointer;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s all;
+}
+
+.projects_modal .project:hover{
+    background: #016DC4;
+    color: white;
+}
+
+.projects_modal .project:hover .muted{
+    color: lightgray;
+}
+
+.projects_modal .project:hover .project-icon{
+    opacity: 1;
+}
+
+.projects_modal .project-icon{
+    display: inline-block;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    vertical-align: top;
+    opacity: 0.5;
+    transition: 0.25s all;
+    position: relative;
+    top: 0px;
+    left: 25px;
+}
+
+.projects_modal .project-holder{
+    display: block;
+    position: absolute;
+    margin-left: 66px;
+    top: 0px;
+}
+
+.projects_modal .project-alias{
+    font-size: 25pt;
+    padding-top: 8px;
+    display: inline-block;
+}
+
+.projects_modal .heart {
+    position: relative;
+    top: 10px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.projects_modal .heart:before,
+.projects_modal .heart:after {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 0;
+    width: 10px;
+    height: 16px;
+    background: gray;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+}
+
+.projects_modal .heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -webkit-transform-origin :100% 100%;
+}
+
+.projects_modal .heart.favorite:before,
+.projects_modal .heart.favorite:after{
+    background: gold;
+}
+
+.projects_modal .favorite.favorite{
+    border-bottom: 1px dotted;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
