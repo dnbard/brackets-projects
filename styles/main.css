@@ -1,16 +1,14 @@
 #project-files-header{
     position: relative;
-    padding: 8px 0 9px 30px;
+    padding: 8px 0 9px 34px;
 }
 
 #ext-projects-toggle{
     display: inline-block;
-    background: red;
-    width: 10px;
-    height: 10px;
     position: absolute;
-    top: 12px;
+    top: 10px;
     left: 12px;
+    cursor: pointer;
 }
 
 .projects_modal{
@@ -60,7 +58,6 @@
     transition: 0.25s all;
     position: relative;
     top: 0px;
-    left: 25px;
 }
 
 .projects_modal .project-holder{
@@ -76,40 +73,23 @@
     display: inline-block;
 }
 
-.projects_modal .heart {
-    position: relative;
-    top: 10px;
-    width: 36px;
-    height: 36px;
+.projects_modal .brproj-heart{
+    font-size: 18pt;
     cursor: pointer;
+    transition: 0.25s all;
 }
 
-.projects_modal .heart:before,
-.projects_modal .heart:after {
-    position: absolute;
-    content: "";
-    left: 10px;
-    top: 0;
-    width: 10px;
-    height: 16px;
-    background: gray;
-    border-radius: 50px 50px 0 0;
-    -webkit-transform: rotate(-45deg);
-    -webkit-transform-origin: 0 100%;
+.projects_modal .brproj-heart:hover,
+.projects_modal .brproj-heart.favorite:hover{
+    color: white;
 }
 
-.projects_modal .heart:after {
-    left: 0;
-    -webkit-transform: rotate(45deg);
-    -webkit-transform-origin :100% 100%;
+.projects_modal .brproj-heart.favorite{
+    color: gold;
 }
 
-.projects_modal .heart.favorite:before,
-.projects_modal .heart.favorite:after{
-    background: gold;
-}
 
-.projects_modal .favorite.favorite{
+.projects_modal .projects.favorite{
     border-bottom: 1px dotted;
     margin-bottom: 10px;
     padding-bottom: 5px;

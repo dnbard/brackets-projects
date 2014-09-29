@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "brackets-projects";
+  src:url("fonts/brackets-projects.eot");
+  src:url("fonts/brackets-projects.eot?#iefix") format("embedded-opentype"),
+    url("fonts/brackets-projects.woff") format("woff"),
+    url("fonts/brackets-projects.ttf") format("truetype"),
+    url("fonts/brackets-projects.svg#brackets-projects") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "brackets-projects" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="brproj-"]:before,
+[class*=" brproj-"]:before {
+  font-family: "brackets-projects" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.brproj-eye:before {
+  content: "a";
+}
+.brproj-file-submodule:before {
+  content: "b";
+}
+.brproj-heart:before {
+  content: "c";
+}
+.brproj-gear:before {
+  content: "d";
+}
+.brproj-x:before {
+  content: "e";
+}

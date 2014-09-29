@@ -5,7 +5,7 @@
     <div class="modal-body">
         <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favorites().length > 0">
             <div class="project" data-bind="click: $parent.open">
-                <span class="heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
                 <span class="project-icon" data-bind="style:{background: $data.background}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
                 </span>
@@ -21,7 +21,7 @@
         </div>
         <div class="projects" data-bind="foreach: projects">
             <div class="project" data-bind="click: $parent.open">
-                <span class="heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
                 <span class="project-icon" data-bind="style:{background: $data.background}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
                 </span>
