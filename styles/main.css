@@ -48,6 +48,14 @@
     opacity: 1;
 }
 
+.projects_modal .project:hover .project-holder{
+    margin-left: 98px;
+}
+
+.projects_modal .project:hover .brproj{
+    display: inline-block;
+}
+
 .projects_modal .project-icon{
     display: inline-block;
     text-align: center;
@@ -63,7 +71,8 @@
 .projects_modal .project-holder{
     display: block;
     position: absolute;
-    margin-left: 98px;
+    margin-left: 40px;
+    transition: 0.25s all;
     top: 0px;
 }
 
@@ -76,6 +85,7 @@
 .projects_modal .projects .brproj{
     font-size: 18pt;
     cursor: pointer;
+    display: none;
     transition: 0.25s all;
 }
 
