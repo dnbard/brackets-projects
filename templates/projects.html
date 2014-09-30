@@ -1,16 +1,21 @@
 <div class="projects_modal modal">
     <div class="modal-header">
-        <h1 class="dialog-title">
+        <h1 class="dialog-title brproj-file-submodule">
             <span>Projects</span>
-            <span class="brproj-heart">3</span>
-            <span class="brproj-file-submodule">12</span>
-            <span class="brproj-eye">2</span>
         </h1>
     </div>
     <div class="modal-body">
-        <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favorites().length > 0">
+        <div class="filters">
+            <input type="text" class="search" placeholder data-bind="value: query, valueUpdate: 'afterkeydown'"/>
+            <div class="filter brproj-heart" data-bind="text: favoriteProjects().length, css:{selected: isFavoritesSelected()}, click: selectFavorite"></div>
+            <div class="filter brproj-file-submodule" data-bind="text: projects().length, css:{selected: isRegularSelected()}, click: selectRegular">12</div>
+            <div class="filter brproj-eye" data-bind="css:{selected: isHiddenSelected()}, click: selectHidden">0</div>
+        </div>
+        <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0"></div>
+        <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favoriteProjects().length > 0 && isFavoritesSelected()">
             <div class="project" data-bind="click: $parent.open">
-                <span class="brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj brproj-x" data-bind="click: $parent.remove"></span>
                 <span class="project-icon" data-bind="style:{background: $data.background}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
                 </span>
@@ -24,9 +29,11 @@
                 </div>
             </div>
         </div>
-        <div class="projects" data-bind="foreach: projects">
+        <div class="border" data-bind="visible: isRegularSelected() && projects().length > 0"></div>
+        <div class="projects" data-bind="foreach: projects, visible: isRegularSelected()">
             <div class="project" data-bind="click: $parent.open">
-                <span class="brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj brproj-x" data-bind="click: $parent.remove"></span>
                 <span class="project-icon" data-bind="style:{background: $data.background}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
                 </span>
@@ -43,5 +50,6 @@
     </div>
     <div class="modal-footer">
         <button class="dialog-button btn primary">Close</button>
+        <button class="dialog-button btn" data-bind="click: openFolder">Open folder</button>
     </div>
 </div>

@@ -5,7 +5,8 @@ define(function(require, exports){
         _ = require('../vendor/lodash'),
         events = {},
         inits = {
-            favorites: []
+            favorites: [],
+            filter:['favorite', 'regular']
         };
 
     exports.init = function(){

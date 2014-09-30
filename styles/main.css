@@ -63,7 +63,7 @@
 .projects_modal .project-holder{
     display: block;
     position: absolute;
-    margin-left: 66px;
+    margin-left: 98px;
     top: 0px;
 }
 
@@ -73,24 +73,47 @@
     display: inline-block;
 }
 
-.projects_modal .brproj-heart{
+.projects_modal .projects .brproj{
     font-size: 18pt;
     cursor: pointer;
     transition: 0.25s all;
 }
 
-.projects_modal .brproj-heart:hover,
-.projects_modal .brproj-heart.favorite:hover{
+.projects_modal .projects .brproj:hover,
+.projects_modal .projects .brproj.favorite:hover{
     color: white;
 }
 
-.projects_modal .brproj-heart.favorite{
+.projects_modal .projects .brproj.favorite{
     color: gold;
 }
 
-
-.projects_modal .projects.favorite{
+.projects_modal .border{
     border-bottom: 1px dotted;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+    margin: 10px 0;
+}
+
+.projects_modal .filter{
+    display: inline-block;
+    border-bottom: 1px dotted transparent;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14pt;
+    padding-bottom: 2px;
+    vertical-align: middle;
+}
+
+.projects_modal .filter:hover{
+    border-bottom: 1px dotted;
+}
+
+.projects_modal .filter.selected{
+    color: gold;
+}
+
+.projects_modal .search{
+    padding-left: 22px;
+    background-image: url('../images/topcoat-search-20.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
 }
