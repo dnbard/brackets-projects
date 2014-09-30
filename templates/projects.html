@@ -8,7 +8,7 @@
         <div class="filters">
             <input type="text" class="search" placeholder data-bind="value: query, valueUpdate: 'afterkeydown'"/>
             <div class="filter brproj-heart" data-bind="text: favoriteProjects().length, css:{selected: isFavoritesSelected()}, click: selectFavorite"></div>
-            <div class="filter brproj-file-submodule" data-bind="text: projects().length, css:{selected: isRegularSelected()}, click: selectRegular">12</div>
+            <div class="filter brproj-file-submodule" data-bind="text: projects().length, css:{selected: isRegularSelected()}, click: selectRegular"></div>
             <div class="filter brproj-eye" data-bind="css:{selected: isHiddenSelected()}, click: selectHidden">0</div>
         </div>
         <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0"></div>
