@@ -11,7 +11,7 @@
             <div class="filter brproj-file-submodule" data-bind="text: projects().length, css:{selected: isRegularSelected()}, click: selectRegular"></div>
             <div class="filter brproj-eye" data-bind="css:{selected: isHiddenSelected()}, click: selectHidden">0</div>
         </div>
-        <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0"></div>
+        <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0">FAVORITE PROJECTS</div>
         <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favoriteProjects().length > 0 && isFavoritesSelected()">
             <div class="project" data-bind="click: $parent.open">
                 <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="border" data-bind="visible: isRegularSelected() && projects().length > 0"></div>
+        <div class="border" data-bind="visible: isRegularSelected() && projects().length > 0">PROJECTS</div>
         <div class="projects" data-bind="foreach: projects, visible: isRegularSelected()">
             <div class="project" data-bind="click: $parent.open">
                 <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>

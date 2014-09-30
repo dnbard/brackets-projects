@@ -101,6 +101,7 @@
 .projects_modal .border{
     border-bottom: 1px dotted;
     margin: 10px 0;
+    font-size: 10px;
 }
 
 .projects_modal .filter{
