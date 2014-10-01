@@ -4,6 +4,8 @@ define(function (require, exports, module) {
         domInjector = new DomInjector(),
         preferences = require('./services/prefs');
 
+    require('./onlineTracking').init();
+
     preferences.init();
 
     ExtensionUtils.loadStyleSheet(module, 'styles/main.css');
