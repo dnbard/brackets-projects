@@ -4,7 +4,7 @@ define(function (require, exports, module) {
         domInjector = new DomInjector(),
         preferences = require('./services/prefs');
 
-    require('./onlineTracking').init();
+    require('./services/onlineTracking').init();
 
     preferences.init();
 
