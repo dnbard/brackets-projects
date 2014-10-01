@@ -6,7 +6,8 @@ define(function(require, exports){
         events = {},
         inits = {
             favorites: [],
-            filter:['favorite', 'regular']
+            filter: ['favorite', 'regular'],
+            customs: []
         };
 
     exports.init = function(){

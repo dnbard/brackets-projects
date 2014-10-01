@@ -9,16 +9,22 @@
             <input type="text" class="search" placeholder data-bind="value: query, valueUpdate: 'afterkeydown'"/>
             <div class="filter brproj-heart" data-bind="text: favoriteProjects().length, css:{selected: isFavoritesSelected()}, click: selectFavorite"></div>
             <div class="filter brproj-file-submodule" data-bind="text: projects().length, css:{selected: isRegularSelected()}, click: selectRegular"></div>
-            <div class="filter brproj-eye" data-bind="css:{selected: isHiddenSelected()}, click: selectHidden">0</div>
+            <div class="filter brproj-eye" data-bind="visible: false, css:{selected: isHiddenSelected()}, click: selectHidden">0</div>
         </div>
         <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0">FAVORITE PROJECTS</div>
         <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favoriteProjects().length > 0 && isFavoritesSelected()">
             <div class="project" data-bind="click: $parent.open">
                 <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj brproj-gear" data-bind="click: $parent.options"></span>
                 <span class="brproj brproj-x" data-bind="click: $parent.remove"></span>
-                <span class="project-icon" data-bind="style:{background: $data.background}">
+                <!-- ko if: !$parent.isCustomImage($data) -->
+                <span class="project-icon" data-bind="style:{ background: $parent.getBackground($data)}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
                 </span>
+                <!-- /ko -->
+                <!-- ko if: $parent.isCustomImage($data) -->
+                    <img data-bind="attr:{src: $parent.getBackground($data)}" width="36" height="36" />
+                <!-- /ko -->
                 <div class="project-holder">
                     <div class="project-name" data-bind="text: folder"></div>
                     <div>
@@ -33,10 +39,16 @@
         <div class="projects" data-bind="foreach: projects, visible: isRegularSelected()">
             <div class="project" data-bind="click: $parent.open">
                 <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span class="brproj brproj-gear" data-bind="click: $parent.options"></span>
                 <span class="brproj brproj-x" data-bind="click: $parent.remove"></span>
-                <span class="project-icon" data-bind="style:{background: $data.background}">
+                <!-- ko if: !$parent.isCustomImage($data) -->
+                <span class="project-icon" data-bind="style:{ background: $parent.getBackground($data)}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
                 </span>
+                <!-- /ko -->
+                <!-- ko if: $parent.isCustomImage($data) -->
+                    <img data-bind="attr:{src: $parent.getBackground($data)}" width="36" height="36" />
+                <!-- /ko -->
                 <div class="project-holder">
                     <div class="project-name" data-bind="text: folder"></div>
                     <div>

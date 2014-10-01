@@ -49,7 +49,7 @@
 }
 
 .projects_modal .project:hover .project-holder{
-    margin-left: 98px;
+    margin-left: 118px;
 }
 
 .projects_modal .project:hover .brproj{
@@ -87,11 +87,18 @@
     cursor: pointer;
     display: none;
     transition: 0.25s all;
+    margin-top: 5px;
+    color: gray;
 }
 
 .projects_modal .projects .brproj:hover,
 .projects_modal .projects .brproj.favorite:hover{
     color: white;
+}
+
+.projects_modal .projects img{
+    display: inline-block;
+    vertical-align: top;
 }
 
 .projects_modal .projects .brproj.favorite{

@@ -1,0 +1,23 @@
+<div class="projects_modal modal">
+    <div class="modal-header">
+        <h1 class="dialog-title brproj-file-submodule">
+            <span>Project Options</span>
+        </h1>
+    </div>
+    <div class="modal-body">
+        <h2 data-bind="text: project.folder"></h2>
+        <div data-bind="text: isFavorite()? 'FAVORITE PROJECT' : ''"></div>
+        <div>
+            <span>Custom name</span>
+            <input type="text"/>
+        </div>
+        <div>
+            <span>Custom image URL</span>
+            <input type="text" data-bind="value: customImage, valueUpdate: 'keypress'"/>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="dialog-button btn primary">Close</button>
+        <button class="dialog-button btn" data-bind="click: back">Back</button>
+    </div>
+</div>

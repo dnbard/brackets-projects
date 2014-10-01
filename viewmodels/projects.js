@@ -10,7 +10,9 @@ define(function(require, exports, module){
             colorProvider = new ColorProvider(),
             ProjectManager = brackets.getModule('project/ProjectManager'),
             prefs = require('../services/prefs'),
-            PreferencesManager = brackets.getModule('preferences/PreferencesManager');
+            PreferencesManager = brackets.getModule('preferences/PreferencesManager'),
+            modalService = require('../services/modal'),
+            modals = require('../enums/modals');
 
         this.projects = ko.observableArray([]);
         this.favoriteProjects = ko.observableArray([]);
@@ -23,6 +25,7 @@ define(function(require, exports, module){
         });
 
         this.favorites = ko.observableArray(prefs.get('favorites') || []);
+        this.customs = ko.observableArray(prefs.get('customs') || []);
 
         this.getAlias = function(folder){
             if (typeof folder !== 'string' || folder.length === 0){
@@ -142,6 +145,35 @@ define(function(require, exports, module){
         this.removeFromProjects = function(project){
             this.projects.remove(project);
             this.favoriteProjects.remove(project);
+        }
+
+        this.options = function(project){
+            //close this modal
+            $('.projects_modal .dialog-button').trigger('click');
+
+            setTimeout(function(){
+                modalService.showHandler(modals.OPTIONS, {
+                    project: project
+                });
+            }, 1);
+        }
+
+        this.isCustomImage = function(project){
+            return !!(_.find(self.customs(), function(custom){
+                return custom.path === project.path;
+            }) || {}).image;
+        }
+
+        this.getBackground = function(project){
+            var custom = _.find(self.customs(), function(custom){
+                return custom.path === project.path;
+            });
+
+            if (custom && custom.image){
+                return custom.image;
+            } else {
+                return project.background;
+            }
         }
 
         this.init = function(){
