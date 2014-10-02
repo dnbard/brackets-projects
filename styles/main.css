@@ -145,3 +145,18 @@
     display: inline-block;
     width: 420px;
 }
+
+#project-name__custom{
+    margin-right: 2px;
+    color: white;
+}
+
+#project-name__custom:before{
+    content: "[";
+    color: gray;
+}
+
+#project-name__custom:after{
+    content: "]";
+    color: gray;
+}
