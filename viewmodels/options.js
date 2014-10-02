@@ -2,7 +2,6 @@ define(function(require, exports, module){
     var ko = require('../vendor/knockout'),
         _ = require('../vendor/lodash'),
         prefs = require('../services/prefs'),
-        PreferencesManager = brackets.getModule('preferences/PreferencesManager'),
         modalService = require('../services/modal'),
         modals = require('../enums/modals');
 
@@ -21,6 +20,25 @@ define(function(require, exports, module){
         }
 
         this.customs = ko.observableArray(prefs.get('customs') || []);
+
+        this.customName = ko.observable(null);
+        this.customName.subscribe(function(value){
+            var customs = prefs.get('customs'),
+                entity = _.find(customs, function(custom){
+                    return custom.path === self.project.path;
+                });
+
+            if (!entity){
+                entity = {
+                    path: self.project.path
+                };
+                customs.push(entity);
+            }
+
+            entity.name = value;
+
+            prefs.set('customs', customs);
+        });
 
         this.customImage = ko.observable(null);
         this.customImage.subscribe(function(value){
@@ -54,6 +72,7 @@ define(function(require, exports, module){
 
             if (customEntity){
                 this.customImage(customEntity.image || null);
+                this.customName(customEntity.name || null);
             }
         }
 

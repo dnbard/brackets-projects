@@ -135,3 +135,13 @@
     background-repeat: no-repeat;
     background-position: left center;
 }
+
+.projects_modal .modal-cell120{
+    display: inline-block;
+    width: 120px;
+}
+
+.projects_modal .modal-cell420{
+    display: inline-block;
+    width: 420px;
+}
