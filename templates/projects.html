@@ -26,7 +26,14 @@
                     <img data-bind="attr:{src: $parent.getBackground($data)}" width="36" height="36" />
                 <!-- /ko -->
                 <div class="project-holder">
-                    <div class="project-name" data-bind="text: folder"></div>
+                    <div class="project-name">
+                        <!-- ko if: $parent.isCustomName($data) -->
+                        <span>[</span>
+                        <span data-bind="text: $parent.getCustomName($data)"></span>
+                        <span>]</span>
+                        <!-- /ko -->
+                        <span data-bind="text: folder"></span>
+                    </div>
                     <div>
                         <span>[</span>
                         <span class="project-path muted" data-bind="text: path"></span>
@@ -50,7 +57,14 @@
                     <img data-bind="attr:{src: $parent.getBackground($data)}" width="36" height="36" />
                 <!-- /ko -->
                 <div class="project-holder">
-                    <div class="project-name" data-bind="text: folder"></div>
+                    <div class="project-name">
+                        <!-- ko if: $parent.isCustomName($data) -->
+                        <span>[</span>
+                        <span data-bind="text: $parent.getCustomName($data)"></span>
+                        <span>]</span>
+                        <!-- /ko -->
+                        <span data-bind="text: folder"></span>
+                    </div>
                     <div>
                         <span>[</span>
                         <span class="project-path muted" data-bind="text: path"></span>

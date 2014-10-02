@@ -164,6 +164,18 @@ define(function(require, exports, module){
             }) || {}).image;
         }
 
+        this.isCustomName = function(project){
+            return (_.find(self.customs(), function(custom){
+                return custom.path === project.path;
+            }) || {}).name;
+        }
+
+        this.getCustomName = function(project){
+            return _.find(self.customs(), function(custom){
+                return custom.path === project.path;
+            }).name;
+        }
+
         this.getBackground = function(project){
             var custom = _.find(self.customs(), function(custom){
                 return custom.path === project.path;
