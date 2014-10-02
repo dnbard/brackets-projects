@@ -14,9 +14,9 @@
         <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0">FAVORITE PROJECTS</div>
         <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favoriteProjects().length > 0 && isFavoritesSelected()">
             <div class="project" data-bind="click: $parent.open">
-                <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
-                <span class="brproj brproj-gear" data-bind="click: $parent.options"></span>
-                <span class="brproj brproj-x" data-bind="click: $parent.remove"></span>
+                <span title="Make this project a favorite" class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span title="Options" class="brproj brproj-gear" data-bind="click: $parent.options"></span>
+                <span title="Close this project" class="brproj brproj-x" data-bind="click: $parent.remove"></span>
                 <!-- ko if: !$parent.isCustomImage($data) -->
                 <span class="project-icon" data-bind="style:{ background: $parent.getBackground($data)}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
@@ -45,9 +45,9 @@
         <div class="border" data-bind="visible: isRegularSelected() && projects().length > 0">PROJECTS</div>
         <div class="projects" data-bind="foreach: projects, visible: isRegularSelected()">
             <div class="project" data-bind="click: $parent.open">
-                <span class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
-                <span class="brproj brproj-gear" data-bind="click: $parent.options"></span>
-                <span class="brproj brproj-x" data-bind="click: $parent.remove"></span>
+                <span title="Make this project a favorite" class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
+                <span title="Options" class="brproj brproj-gear" data-bind="click: $parent.options"></span>
+                <span title="Close this project" class="brproj brproj-x" data-bind="click: $parent.remove"></span>
                 <!-- ko if: !$parent.isCustomImage($data) -->
                 <span class="project-icon" data-bind="style:{ background: $parent.getBackground($data)}">
                     <span class="project-alias" data-bind="text: $parent.getAlias($data.folder), style:{color: $parent.getAliasColor($data)}"></span>
