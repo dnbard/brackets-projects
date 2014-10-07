@@ -3,7 +3,7 @@
     "title": "Projects",
     "description": "Window that helps to switch between Projects, add favorites. Really helpful if you have a lot of Projects.",
     "homepage": "https://github.com/dnbard/brackets-projects",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "author": "Alex Bardanov",
     "license": "MIT",
     "engines": {
