@@ -188,6 +188,16 @@ define(function(require, exports, module){
             }
         }
 
+        this.hoverProject = ko.observable(null);
+
+        this.mouseout = function(){
+            self.hoverProject(null);
+        }
+
+        this.mouseover = function(project){
+            self.hoverProject(project);
+        }
+
         this.init = function(){
             var projects = self.getProjectList(),
                 favoriteProjects;
@@ -202,6 +212,95 @@ define(function(require, exports, module){
 
             this.projects(projects);
             this.favoriteProjects(favoriteProjects);
+        }
+
+        this.getPreviousProject = function(){
+            var cProject = this.hoverProject(),
+                projects,
+                selectNext = false,
+                selected = null;
+
+            if (!cProject){
+                if (this.isRegularSelected()){
+                    return _.last(this.projects());
+                }
+                else if (this.isFavoritesSelected()){
+                    return _.last(this.favoriteProjects());
+                }
+            } else {
+                projects = [];
+
+                if (this.isRegularSelected()){
+                    projects = _.clone(this.projects()).reverse();
+                }
+
+                if (this.isFavoritesSelected()){
+                    projects = _.union(projects, _.clone(this.favoriteProjects()).reverse());
+                }
+
+                _.each(projects, function(project){
+                    if (selectNext){
+                        selected = project;
+                        return false;
+                    }
+
+                    selectNext = project === cProject;
+                });
+
+                return selected;
+            }
+        }
+
+        this.getNextProject = function(){
+            var cProject = this.hoverProject(),
+                projects,
+                selectNext = false,
+                selected = null;
+
+            if (!cProject){
+                if (this.isFavoritesSelected()){
+                    return _.first(this.favoriteProjects());
+                } else if (this.isRegularSelected()){
+                    return _.first(this.projects());
+                }
+            } else {
+                projects = [];
+
+                if (this.isFavoritesSelected()){
+                    projects = this.favoriteProjects();
+                }
+
+                if (this.isRegularSelected()){
+                    projects = _.union(projects, this.projects());
+                }
+
+                _.each(projects, function(project){
+                    if (selectNext){
+                        selected = project;
+                        return false;
+                    }
+
+                    selectNext = project === cProject;
+                });
+
+                return selected;
+            }
+        }
+
+        this.keypress = function(model, event){
+            var keyCode = event.keyCode;
+
+            if (keyCode === 40){
+                //down
+                self.hoverProject(self.getNextProject());
+            } else if (keyCode === 38){
+                self.hoverProject(self.getPreviousProject());
+            }
+
+            console.log(keyCode);
+            console.log(event);
+
+            return true;
         }
 
         this.init();

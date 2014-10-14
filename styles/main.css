@@ -35,24 +35,24 @@
     transition: 0.25s all;
 }
 
-.projects_modal .project:hover{
+.projects_modal .project.hover{
     background: #016DC4;
     color: white;
 }
 
-.projects_modal .project:hover .muted{
+.projects_modal .project.hover .muted{
     color: lightgray;
 }
 
-.projects_modal .project:hover .project-icon{
+.projects_modal .project.hover .project-icon{
     opacity: 1;
 }
 
-.projects_modal .project:hover .project-holder{
+.projects_modal .project.hover .project-holder{
     margin-left: 118px;
 }
 
-.projects_modal .project:hover .brproj{
+.projects_modal .project.hover .brproj{
     display: inline-block;
 }
 

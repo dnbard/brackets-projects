@@ -1,4 +1,4 @@
-<div class="projects_modal modal">
+<div class="projects_modal modal" data-bind="event:{keydown: keypress}">
     <div class="modal-header">
         <h1 class="dialog-title brproj-file-submodule">
             <span>Projects</span>
@@ -13,7 +13,7 @@
         </div>
         <div class="border" data-bind="visible: isFavoritesSelected() && favoriteProjects().length > 0">FAVORITE PROJECTS</div>
         <div class="projects favorite" data-bind="foreach: favoriteProjects, visible: favoriteProjects().length > 0 && isFavoritesSelected()">
-            <div class="project" data-bind="click: $parent.open">
+            <div class="project" data-bind="css:{hover: $data === $parent.hoverProject() },click: $parent.open, event:{mouseover:$parent.mouseover, mouseout:$parent.mouseout}">
                 <span title="Make this project a favorite" class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
                 <span title="Options" class="brproj brproj-gear" data-bind="click: $parent.options"></span>
                 <span title="Close this project" class="brproj brproj-x" data-bind="click: $parent.remove"></span>
@@ -44,7 +44,7 @@
         </div>
         <div class="border" data-bind="visible: isRegularSelected() && projects().length > 0">PROJECTS</div>
         <div class="projects" data-bind="foreach: projects, visible: isRegularSelected()">
-            <div class="project" data-bind="click: $parent.open">
+            <div class="project" data-bind="css:{hover: $data === $parent.hoverProject() },click: $parent.open, event:{mouseover:$parent.mouseover, mouseout:$parent.mouseout}">
                 <span title="Make this project a favorite" class="brproj brproj-heart" data-bind="click: $parent.favorite, css:{favorite: $parent.isFavorite($data)}"></span>
                 <span title="Options" class="brproj brproj-gear" data-bind="click: $parent.options"></span>
                 <span title="Close this project" class="brproj brproj-x" data-bind="click: $parent.remove"></span>
