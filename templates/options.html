@@ -9,12 +9,15 @@
         <div data-bind="text: isFavorite()? 'FAVORITE PROJECT' : ''"></div>
         <div class="modal-row">
             <span class="modal-cell120">Custom name</span>
-            <input class="modal-cell420" type="text" data-bind="value: customName, valueUpdate: 'keypress'"/>
+            <input class="modal-cell420" type="text" data-bind="value: customName, valueUpdate: 'afterkeydown'"/>
         </div>
         <div class="modal-row">
             <span class="modal-cell120">Custom image URL</span>
-            <input class="modal-cell420" type="text" data-bind="value: customImage, valueUpdate: 'keypress'"/>
+            <input class="modal-cell420" type="text" data-bind="value: customImage, valueUpdate: 'afterkeydown'"/>
         </div>
+    </div>
+    <div class="modal-body">
+        <i>Note: pressing ENTER will close this window.</i>
     </div>
     <div class="modal-footer">
         <button class="dialog-button btn primary">Close</button>
