@@ -21,10 +21,6 @@
     max-height: none;
 }
 
-.projects_modal .muted{
-    transition: 0.25s all;
-}
-
 .projects_modal .project{
     width: 100%;
     cursor: pointer;
@@ -32,7 +28,6 @@
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    transition: 0.25s all;
 }
 
 .projects_modal .project.hover{
@@ -63,7 +58,6 @@
     height: 36px;
     vertical-align: top;
     opacity: 0.5;
-    transition: 0.25s all;
     position: relative;
     top: 0px;
 }
@@ -72,7 +66,6 @@
     display: block;
     position: absolute;
     margin-left: 40px;
-    transition: 0.25s all;
     top: 0px;
 }
 
@@ -86,10 +79,9 @@
     font-size: 18pt;
     cursor: pointer;
     display: none;
-    transition: 0.25s all;
     margin-top: 5px;
     color: gray;
-    float: right; /* Moving the Controls to the Right */
+    float: right;
 }
 
 .projects_modal .projects .brproj:hover,
