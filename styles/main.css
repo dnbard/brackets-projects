@@ -31,8 +31,9 @@
 }
 
 .projects_modal .project.hover{
-    background: #016DC4;
+    background: RGBA(1, 109, 196, 0.2);
     color: white;
+    border-radius: 5px;
 }
 
 .projects_modal .project.hover .muted{
