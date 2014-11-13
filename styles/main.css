@@ -28,6 +28,7 @@
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .projects_modal .project.hover{
@@ -83,6 +84,8 @@
     margin-top: 5px;
     color: gray;
     float: right;
+    z-index: 10;
+    position: relative;
 }
 
 .projects_modal .projects .brproj:hover,
