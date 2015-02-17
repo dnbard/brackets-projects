@@ -297,9 +297,6 @@ define(function(require, exports, module){
                 self.hoverProject(self.getPreviousProject());
             }
 
-            console.log(keyCode);
-            console.log(event);
-
             return true;
         }
 
