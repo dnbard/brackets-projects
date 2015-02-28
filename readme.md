@@ -1,7 +1,7 @@
 Projects
 ========
 
-An extension for Brackets IDE
+An extension for Brackets IDE to manage projects.
 
 ![instructions](http://content.screencast.com/users/dnbard/folders/Jing/media/fcc64935-fea7-4fc3-91e9-feea0507d6a5/2014-10-02_1612.png)
 
