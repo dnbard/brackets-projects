@@ -3,7 +3,7 @@
     "title": "Projects",
     "description": "Open your projects from handy modal dialog. Really helpful if you have a lot of projects.",
     "homepage": "https://github.com/dnbard/brackets-projects",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "author": "Alex Bardanov",
     "license": "MIT",
     "engines": {
