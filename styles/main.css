@@ -32,9 +32,13 @@
 }
 
 .projects_modal .project.hover{
-    background: RGBA(1, 109, 196, 0.2);
+    background: #288edf;
     color: white;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+}
+
+.dark .projects_modal .project.hover{
+    background: RGBA(1, 109, 196, 0.2);
 }
 
 .projects_modal .project.hover .muted{
@@ -82,10 +86,14 @@
     cursor: pointer;
     display: none;
     margin-top: 5px;
-    color: gray;
+    color: rgba(256, 256, 256, 0.7);
     float: right;
     z-index: 10;
     position: relative;
+}
+
+.dark .projects_modal .projects .brproj{
+    color: gray;
 }
 
 .projects_modal .projects .brproj:hover,
@@ -99,6 +107,10 @@
 }
 
 .projects_modal .projects .brproj.favorite{
+    color: gold;
+}
+
+.dark .projects_modal .projects .brproj.favorite{
     color: gold;
 }
 
@@ -123,6 +135,10 @@
 }
 
 .projects_modal .filter.selected{
+    color: #288edf;
+}
+
+.dark .projects_modal .filter.selected{
     color: gold;
 }
 
