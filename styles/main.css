@@ -12,9 +12,27 @@
 }
 
 .projects_modal{
-    width: 90%;
+    width: 100%;
     max-width: 650px !important;
     height: auto;
+}
+
+@media screen and (max-height: 1080px) {
+    .projects_modal {
+        max-height: 1000px !important;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .projects_modal {
+        max-height: 768px !important;
+    }
+}
+
+@media screen and (max-height: 768px) {
+    .projects_modal {
+        max-height: 670px !important;
+    }
 }
 
 .projects_modal .modal-body{
